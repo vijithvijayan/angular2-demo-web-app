@@ -1,0 +1,51 @@
+<div *ngIf="movieValid" class="col-xs-12">
+  <div class="row">
+    <div class="col-xs-12 movie-detail-container">
+      <div *ngIf="!movie?.Error" class="row">
+        <div class="col-xs-3 image-container">
+          <img src="{{movie?.Poster}}" class="img-responsive" alt="Responsive image">
+        </div>
+        <div class="col-xs-9 data-container">
+          <div class="row">
+            <div class="col-xs-10">
+              <h1 class="movie-title">{{movie?.Title}}</h1>
+            </div>
+            <div class="col-xs-2">
+              <h1 class="ratingValue small">
+                <strong title="9,2 based on 23.505 user ratings">
+                  <span itemprop="ratingValue">{{movie?.imdbRating}}</span>
+                </strong>
+                <span class="grey">/</span>
+                <span class="grey" itemprop="bestRating">10</span>
+              </h1>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="plot-container well">
+                {{movie?.Plot}}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="directir-info">
+                <div class="credit_summary_item">
+                  <h4 class="inline">Director:</h4>
+                  <span itemprop="director">
+                    <span class="itemprop" itemprop="name">{{movie.Director}}</span>
+                   </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="movie?.Error" class="col-xs-12">
+        <pre class="alert alert-info">
+    <h3 class="text-center">{{movie?.Error}}</h3>
+  </pre>
+      </div>
+    </div>
+  </div>
+</div>
