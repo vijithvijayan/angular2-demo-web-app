@@ -12,6 +12,7 @@
             </div>
             <div class="col-xs-2">
               <h1 class="ratingValue small">
+                <span class="glyphicon glyphicon-star start-icon"></span>
                 <strong title="9,2 based on 23.505 user ratings">
                   <span itemprop="ratingValue">{{movie?.imdbRating}}</span>
                 </strong>
@@ -32,6 +33,14 @@
               <div class="directir-info">
                 <div class="credit_summary_item">
                   <h4 class="inline">Director:</h4>
+                  <span itemprop="director">
+                    <span class="itemprop" itemprop="name">{{movie.Director}}</span>
+                   </span>
+                </div>
+              </div>
+              <div class="directir-info">
+                <div class="credit_summary_item">
+                  <h4 class="inline">Rotten Tomato:</h4>
                   <span itemprop="director">
                     <span class="itemprop" itemprop="name">{{movie.Director}}</span>
                    </span>

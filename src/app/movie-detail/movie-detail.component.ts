@@ -15,14 +15,11 @@ export class MovieDetailComponent implements OnInit {
   }
 
   ngOnChanges(){
-    console.log('changes!!!');
     if(Object.keys(this.movie).length !== 0){
       this.movieValid = true;
       this.movie = JSON.parse(this.movie);
     }else {
       this.movieValid = false;
     }
-
   }
-
 }
