@@ -3,7 +3,7 @@ import {Http, URLSearchParams} from "@angular/http";
 
 @Injectable()
 export class DatabaseService {
-
+  private favMovies: Array<any> = [];
   constructor(private http:Http) { }
 
   // returns Observable
@@ -11,8 +11,25 @@ export class DatabaseService {
 
     return this.http
       .get(`http://www.omdbapi.com/`, {
-        search: `t=${title}&y${year}=&plot=${plot}&r=json`
+        search: `t=${title}&y=${year}&plot=${plot}&r=json`
       });
   }
+
+  setFavoriteMovies(movie: any){
+    this.favMovies.push(movie);
+  }
+
+  getFavoriteMovies(): Array<any> {
+    return this.favMovies;
+  }
+
+  removeFavoriteMovie(movie: any) {
+    let movieToRemove = this.favMovies.filter((m: any) => {
+      return m.Title === movie.Title;
+    });
+
+    this.favMovies.splice(this.favMovies.indexOf(movieToRemove[0]), 1);
+  }
+
 
 }

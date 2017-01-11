@@ -31,12 +31,20 @@
               <span>Movie</span>
             </a>
           </li>
+          <li class="top-band-seperator" [routerLinkActive]="['active', 'test']">
+            <a [routerLink]="['./favorites']">
+              <span class="icon-chart"></span>
+              <span>Favorites</span>
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
-    <div class="row">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <router-outlet></router-outlet>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <router-outlet></router-outlet>
+        </div>
       </div>
     </div>
   </div>

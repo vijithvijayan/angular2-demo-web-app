@@ -9,6 +9,7 @@ import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {MovieQueryComponent} from './movie-query/movie-query.component'
 import {MovieDetailComponent} from './movie-detail/movie-detail.component';
+import {MovieListComponent} from './movie-list/movie-list.component';
 
 const routes: Routes = [
     {
@@ -27,7 +28,11 @@ const routes: Routes = [
             {
                 path: 'movieQuery',
                 component: MovieQueryComponent
-            }
+            },
+          {
+            path: 'favorites',
+            component: MovieListComponent
+          }
         ]
     }
 ];

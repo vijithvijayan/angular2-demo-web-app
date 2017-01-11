@@ -1,0 +1,17 @@
+<div class="row" *ngFor="let movie of favoritesList; let i = index">
+  <div class="col-xs-12">
+    <div class="">
+      <div class="">
+        <app-movie-detail [movie]="movie"></app-movie-detail>
+      </div>
+    </div>
+  
+  </div>
+</div>
+<div *ngIf="!favoritesList.length" class="row">
+  <div class="col-xs-12">
+        <pre class="alert alert-info bordered-card">
+    <h3 class="text-center">{{"No movies added!!"}}</h3>
+  </pre>
+  </div>
+</div>

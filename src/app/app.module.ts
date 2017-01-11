@@ -11,6 +11,7 @@ import {DatabaseService} from './database.service';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieQueryComponent } from './movie-query/movie-query.component';
 import {appRouterProviders} from './app.routes';
+import { MovieListComponent } from './movie-list/movie-list.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {appRouterProviders} from './app.routes';
     HomeComponent,
     MovieDetailComponent,
     MovieQueryComponent,
-    AboutComponent
+    AboutComponent,
+    MovieListComponent
   ],
   imports: [
     BrowserModule,

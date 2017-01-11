@@ -1,33 +1,36 @@
 <div class="form-container">
-  <div class="row">
+  <div class="row bordered-card">
     <div class="col-lg-12">
       <div class="bs-component">
         <form class="well form-search" id="search-by-title-form"
-              #movieForm="ngForm" novalidate autocomplete="off">
+              #movieForm="ngForm" (ngSubmit)="submitData(movieForm)" novalidate autocomplete="off">
           <fieldset>
             <legend>By Title</legend>
           </fieldset>
-          <div class="col-sm-12">
-            <label class="control-label" for="t">Title:</label>
-            <input type="text" id="t" name="t" class="input-small" [(ngModel)]="movie.name">
-            &nbsp;&nbsp;
-            <label class="control-label" for="y">Year:</label>
-            <input type="number" min="0" max="2020" id="y" name="y" class="input-small" style="width: 100px;"
-                   [(ngModel)]="movie.year">
-            &nbsp;&nbsp;
-            <label class="control-label">Plot:</label>
-            <select name="plot" style="width: 100px;" [(ngModel)]="movie.plot">
-              <option value="short" selected="">Short</option>
-              <option value="full">Full</option>
-            </select>
-  
-            <label class="control-label">Rotten Tomato Rating:</label>
-            <input type="checkbox" name="RottenTomatoRating" [(ngModel)]="movie.tomatoes" />
+          <div class="row">
+            <div class="col-sm-8">
+              <label class="control-label" for="t">Title:</label>
+              <input type="text" id="t" name="t" class="input-small" [(ngModel)]="movie.name">
+              &nbsp;&nbsp;
+              <label class="control-label" for="y">Year:</label>
+              <input type="number" min="0" max="2020" id="y" name="y" class="input-small" style="width: 100px;"
+                     [(ngModel)]="movie.year">
+              &nbsp;&nbsp;
+              <label class="control-label">Plot:</label>
+              <select name="plot" style="width: 100px;" [(ngModel)]="movie.plot">
+                <option value="short" selected="">Short</option>
+                <option value="full">Full</option>
+              </select>
+    
+              <label class="control-label">Rotten Tomato Rating:</label>
+              <input type="checkbox" name="RottenTomatoRating" [(ngModel)]="movie.tomatoes" />
+            </div>
+            <div class="col-sm-4">
+              <button type="submit" class="btn-sm btn-primary">Search</button>
+              <button type="button" class="btn-sm" (click)="resetForm($event)">Reset</button>
+            </div>
           </div>
-          <div class="col-sm-6">
-            <button type="button" (click)="submitData(movieForm)" class="btn-sm btn-primary">Search</button>
-            <button type="button" class="btn-sm" (click)="resetForm($event)">Reset</button>
-          </div>
+            
           <!--<div *ngIf="dataLoaded" class="">
             <p>Response:</p>
             <pre class="" [ngStyle]="{'margin-bottom': '0px', 'white-space': 'normal'}">{{response}}</pre>
