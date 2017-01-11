@@ -30,6 +30,4 @@ export class DatabaseService {
 
     this.favMovies.splice(this.favMovies.indexOf(movieToRemove[0]), 1);
   }
-
-
 }

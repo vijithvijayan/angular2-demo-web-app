@@ -32,7 +32,6 @@ export class MovieDetailComponent implements OnInit {
           this.makeFav = true;
         } else {
           this.makeFav = false;
-
         }
       }
 
