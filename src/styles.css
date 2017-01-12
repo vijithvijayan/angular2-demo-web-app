@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import './app/home/home.component.css';
+@import './app/about/about.component.css';
 @import './app/movie-detail/movie-detail.component.css';
+@import './app/movie-query/movie-query.component.css';
+
+.no-padding{
+  padding: 0px !important;
+}

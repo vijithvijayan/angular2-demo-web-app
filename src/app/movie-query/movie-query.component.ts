@@ -12,7 +12,7 @@ export class MovieQueryComponent {
     name: '',
     year: new Date().getFullYear(),
     plot: 'full',
-    tomatoes: false
+    tomatoes: true
   };
   dataLoaded: boolean;
   response: any = {};
@@ -20,7 +20,7 @@ export class MovieQueryComponent {
   constructor(private databaseService: DatabaseService) { }
 
   submitData(movieForm: any) {
-    this.databaseService.getData(this.movie.name, this.movie.year, this.movie.plot).subscribe(
+    this.databaseService.getData(this.movie.name, this.movie.year, this.movie.plot, this.movie.tomatoes).subscribe(
       (response: any) => this.handleResponse(response),
       (error: any) => this.handleError(error),
       () => this.onComplete()
