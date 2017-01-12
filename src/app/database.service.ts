@@ -7,11 +7,11 @@ export class DatabaseService {
   constructor(private http:Http) { }
 
   // returns Observable
-  getData(title: string, year?: number, plot?: string){
+  getData(title: string, year?: number, plot?: string, tomatoes?: boolean){
 
     return this.http
       .get(`http://www.omdbapi.com/`, {
-        search: `t=${title}&y=${year}&plot=${plot}&r=json`
+        search: `t=${title}&y${year}=&plot=${plot}&r=json&tomatoes=${tomatoes}`
       });
   }
 
@@ -30,6 +30,4 @@ export class DatabaseService {
 
     this.favMovies.splice(this.favMovies.indexOf(movieToRemove[0]), 1);
   }
-
-
 }
