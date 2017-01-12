@@ -11,7 +11,7 @@ export class DatabaseService {
 
     return this.http
       .get(`http://www.omdbapi.com/`, {
-        search: `t=${title}&y${year}=&plot=${plot}&r=json&tomatoes=${tomatoes}`
+        search: `t=${title}&y=${year}&plot=${plot}&r=json&tomatoes=${tomatoes}`
       });
   }
 
