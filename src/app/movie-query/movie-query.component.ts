@@ -15,11 +15,13 @@ export class MovieQueryComponent {
     tomatoes: true
   };
   dataLoaded: boolean;
+  noMovieFound: boolean = false;
   response: any = {};
 
   constructor(private databaseService: DatabaseService) { }
 
   submitData(movieForm: any) {
+    this.noMovieFound = false;
     this.databaseService.getData(this.movie.name, this.movie.year, this.movie.plot, this.movie.tomatoes).subscribe(
       (response: any) => this.handleResponse(response),
       (error: any) => this.handleError(error),
@@ -29,7 +31,14 @@ export class MovieQueryComponent {
   }
 
   handleResponse = (response: any) => {
-    this.response = response._body;
+    let data = JSON.parse(response._body);
+    if(!data.Error){
+      this.response = data;
+    } else {
+      this.response = '';
+      this.noMovieFound = true;
+    }
+
   };
   handleError = (error: any) => {
     this.dataLoaded = false;

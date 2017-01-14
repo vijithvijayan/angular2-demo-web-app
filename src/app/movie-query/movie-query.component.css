@@ -177,3 +177,9 @@ img {
     transform: scale(1); } }
 
 /*# sourceMappingURL=style.css.map */
+.nodata-image-url{
+  content: url('../../assets/images/nodata.gif');
+}
+.noMovieFound {
+  margin: 20px 0px;
+}

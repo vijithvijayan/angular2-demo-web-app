@@ -2,6 +2,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import {DatabaseService} from '../database.service';
 
 import { MovieDetailComponent } from './movie-detail.component';
 
@@ -11,7 +12,8 @@ describe('MovieDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MovieDetailComponent ]
+      declarations: [ MovieDetailComponent ],
+      providers: [DatabaseService]
     })
     .compileComponents();
   }));

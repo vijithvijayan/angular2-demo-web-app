@@ -14,6 +14,7 @@ export class MovieDetailComponent implements OnInit {
   constructor(private databaseService: DatabaseService) { }
 
   ngOnInit() {
+    
   }
 
   ngOnChanges(){
