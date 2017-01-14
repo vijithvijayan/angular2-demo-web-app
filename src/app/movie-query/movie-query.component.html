@@ -48,6 +48,15 @@
               </div>
             </div>
           </div>
+          <div *ngIf="dataLoaded && noMovieFound">
+            <div class="col-xs-9 noMovieFound">
+              <div class="col-xs-3 col-xs-offset-6 img-responsive nodata-image-url"></div>
+              <div class="clearfix"></div>
+              <div class="col-xs-4 col-xs-offset-6">
+                <h3 class="text-center">{{"No Movie found !!"}}</h3>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
     </div>

@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { MovieDetailComponent } from './movie-detail.component';
+import { MovieQueryComponent } from './movie-query.component';
 
-describe('MovieDetailComponent', () => {
-  let component: MovieDetailComponent;
-  let fixture: ComponentFixture<MovieDetailComponent>;
+describe('MovieQueryComponent', () => {
+  let component: MovieQueryComponent;
+  let fixture: ComponentFixture<MovieQueryComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MovieDetailComponent ]
+      declarations: [ MovieQueryComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MovieDetailComponent);
+    fixture = TestBed.createComponent(MovieQueryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
