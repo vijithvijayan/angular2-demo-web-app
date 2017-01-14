@@ -21,6 +21,8 @@ export class MovieQueryComponent {
   constructor(private databaseService: DatabaseService) { }
 
   submitData(movieForm: any) {
+    this.response = '';
+    this.dataLoaded = false;
     this.noMovieFound = false;
     this.databaseService.getData(this.movie.name, this.movie.year, this.movie.plot, this.movie.tomatoes).subscribe(
       (response: any) => this.handleResponse(response),
