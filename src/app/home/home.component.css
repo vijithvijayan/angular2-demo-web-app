@@ -12,11 +12,8 @@
   height: 40px;
 }
 
-.about-container {
-  background-color: #47B6E0;
-}
 .image-url {
-  content: url('../../assets/images/r2d2.gif');
+  content: url('../../assets/images/200.gif');
 }
 .navbar{
   margin-bottom: 0px;
