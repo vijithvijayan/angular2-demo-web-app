@@ -7,15 +7,11 @@ import {DatabaseService} from '../database.service';
   styleUrls: ['./movie-query.component.css']
 })
 export class MovieQueryComponent {
-  movieName: string;
   movie: any = {
     name: '',
-    year: new Date().getFullYear(),
-    plot: 'full',
-    tomatoes: true
+    designation: ''
   };
   dataLoaded: boolean;
-  noMovieFound: boolean = false;
   response: any = {};
 
   constructor(private databaseService: DatabaseService) { }
@@ -23,8 +19,8 @@ export class MovieQueryComponent {
   submitData(movieForm: any) {
     this.response = '';
     this.dataLoaded = false;
-    this.noMovieFound = false;
-    this.databaseService.getData(this.movie.name, this.movie.year, this.movie.plot, this.movie.tomatoes).subscribe(
+
+    this.databaseService.addEmp(this.movie).subscribe(
       (response: any) => this.handleResponse(response),
       (error: any) => this.handleError(error),
       () => this.onComplete()
@@ -38,7 +34,6 @@ export class MovieQueryComponent {
       this.response = data;
     } else {
       this.response = '';
-      this.noMovieFound = true;
     }
 
   };
@@ -52,8 +47,7 @@ export class MovieQueryComponent {
 
   resetForm(event: any) {
     this.movie.name = '';
-    this.movie.plot = 'full';
-    this.movie.year = new Date().getFullYear();
+    this.movie.designation = '';
   }
 
 }

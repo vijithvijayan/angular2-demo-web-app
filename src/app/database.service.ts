@@ -15,6 +15,14 @@ export class DatabaseService {
       });
   }
 
+  addEmp(emp: any){
+    return this.http.post('/api', emp);
+  }
+
+  getEmployees() {
+    return this.http.get('/api');
+  }
+
   setFavoriteMovies(movie: any){
     this.favMovies.push(movie);
   }

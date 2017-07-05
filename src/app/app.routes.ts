@@ -21,14 +21,14 @@ const routes: Routes = [
         path: 'home',
         component: HomeComponent,
         children: [
-            {
-                path: 'about',
-                component: AboutComponent
-            },
-            {
-                path: 'movieQuery',
-                component: MovieQueryComponent
-            },
+          {
+              path: 'about',
+              component: AboutComponent
+          },
+          {
+              path: 'movieQuery',
+              component: MovieQueryComponent
+          },
           {
             path: 'favorites',
             component: MovieListComponent

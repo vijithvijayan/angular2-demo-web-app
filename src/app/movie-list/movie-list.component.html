@@ -1,17 +1,21 @@
-<div class="row" *ngFor="let movie of favoritesList; let i = index">
-  <div class="col-xs-12">
-    <div class="">
-      <div class="">
-        <app-movie-detail [movie]="movie"></app-movie-detail>
-      </div>
-    </div>
-  
-  </div>
-</div>
-<div *ngIf="!favoritesList.length" class="row">
+<table class="table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Designation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of empList; let i = index">
+      <td>{{emp.name}}</td>
+      <td>{{emp.designation}}</td>
+    </tr>
+  </tbody>
+</table>
+<div *ngIf="!empList.length" class="row">
   <div class="col-xs-12">
         <pre class="alert alert-info bordered-card">
-    <h3 class="text-center">{{"No favorite movies!!"}}</h3>
+    <h3 class="text-center">{{"No empList!!"}}</h3>
   </pre>
   </div>
   <div class="col-xs-9 text-center">

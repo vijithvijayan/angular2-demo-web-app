@@ -7,9 +7,12 @@ import {DatabaseService} from "../database.service";
   styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent implements OnInit {
-  private favoritesList: Array<any> = [];
+  private empList: Array<any> = [];
   constructor(private databaseService: DatabaseService) {
-    this.favoritesList = this.databaseService.getFavoriteMovies();
+    this.databaseService.getEmployees().subscribe(
+      (resp: any) => this.empList = resp.json(),
+      (err: any) => {}
+    );
   }
 
   ngOnInit() {
